@@ -15,11 +15,22 @@ class _InviteFriendState extends State<InviteFriend> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.nearlyWhite,
+      decoration: new BoxDecoration(
+        color: Colors.black,
+        gradient: new LinearGradient(
+          colors: [
+            Colors.white,
+            Colors.pink[200],
+          ],
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+        ),
+      ),
+      // color: AppTheme.nearlyWhite,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          backgroundColor: AppTheme.nearlyWhite,
+          // backgroundColor: AppTheme.nearlyWhite,
           body: Column(
             children: <Widget>[
               Container(
