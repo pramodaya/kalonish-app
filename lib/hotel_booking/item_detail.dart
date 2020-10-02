@@ -16,6 +16,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../app_theme.dart';
 import 'filters_screen.dart';
 import 'hotel_app_theme.dart';
 
@@ -120,8 +121,9 @@ class _ItemDetailPageState extends State<ItemDetailPage>
           color: Colors.black,
           gradient: new LinearGradient(
             colors: [
-              Colors.white,
-              Colors.pink[200],
+              AppTheme.gradientColor1,
+              AppTheme.gradientColor2,
+              AppTheme.gradientColor3,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -187,7 +189,7 @@ class _ItemDetailPageState extends State<ItemDetailPage>
                                           dotSpacing: 15.0,
                                           dotColor: Colors.white,
                                           indicatorBgPadding: 3.0,
-                                          dotBgColor: Colors.pink[300],
+                                          dotBgColor: AppTheme.gradientColor2,
                                           // Colors.pink.withOpacity(0.5),
                                           borderRadius: false,
                                           defaultImage: 0,
@@ -207,8 +209,18 @@ class _ItemDetailPageState extends State<ItemDetailPage>
                           ];
                         },
                         body: Container(
-                          color:
-                              HotelAppTheme.buildLightTheme().backgroundColor,
+                          decoration: new BoxDecoration(
+                            color: Colors.black,
+                            gradient: new LinearGradient(
+                              colors: [
+                                AppTheme.gradientColor1,
+                                AppTheme.gradientColor2,
+                                AppTheme.gradientColor3,
+                              ],
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                            ),
+                          ),
                           child: ListView.builder(
                             itemCount: widget.salonObj.productList.length,
                             padding: const EdgeInsets.only(top: 8),
@@ -422,9 +434,8 @@ class _ItemDetailPageState extends State<ItemDetailPage>
                                                                         finalSalonList[index]
                                                                             .name);
                                                                   },
-                                                                  color: Colors
-                                                                          .yellow[
-                                                                      600],
+                                                                  color: AppTheme
+                                                                      .btnColor,
                                                                   child: Text(
                                                                       'Book'),
                                                                   textColor:
@@ -513,7 +524,7 @@ class _ItemDetailPageState extends State<ItemDetailPage>
         FlatButton(
           child: Text('Cancel'),
           textColor: Colors.black,
-          color: Colors.pink[300],
+          color: AppTheme.gradientColor2,
           onPressed: () async {
             Navigator.of(context).pop();
           },
@@ -521,7 +532,7 @@ class _ItemDetailPageState extends State<ItemDetailPage>
         FlatButton(
           child: Text('Confirm'),
           textColor: Colors.black,
-          color: Colors.pink[300],
+          color: AppTheme.gradientColor2,
           onPressed: () async {},
         ),
       ],
@@ -643,6 +654,7 @@ Widget getTitleSection(Salon salon) {
   }
 
   return Container(
+    color: AppTheme.gradientColor2,
     padding: const EdgeInsets.all(32),
     child: Row(
       children: [

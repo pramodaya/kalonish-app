@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class AppTheme {
   AppTheme._();
@@ -18,6 +19,11 @@ class AppTheme {
   static const Color chipBackground = Color(0xFFEEF1F3);
   static const Color spacer = Color(0xFFF2F2F2);
   static const String fontName = 'WorkSans';
+
+  static Color btnColor = Hexcolor('#f18c8e');
+  static Color gradientColor1 = Colors.white;
+  static Color gradientColor2 = Hexcolor('#fdd3d7');
+  static Color gradientColor3 = Hexcolor('#a9e5e5');
 
   static const TextTheme textTheme = TextTheme(
     headline: headline,

@@ -14,6 +14,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import '../app_theme.dart';
 import 'filters_screen.dart';
 import 'hotel_app_theme.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -138,8 +139,9 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
           color: Colors.black,
           gradient: new LinearGradient(
             colors: [
-              Colors.white,
-              Colors.pink[200],
+              AppTheme.gradientColor1,
+              AppTheme.gradientColor2,
+              AppTheme.gradientColor3,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -239,7 +241,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                                     Container(
                                       height: 10.0,
                                       width: MediaQuery.of(context).size.width,
-                                      color: Colors.pink[200],
+                                      color: AppTheme.gradientColor2,
                                     ),
                                     // getSearchBarUI(),
 
@@ -269,7 +271,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                                           dotSpacing: 15.0,
                                           dotColor: Colors.white,
                                           indicatorBgPadding: 3.0,
-                                          dotBgColor: Colors.pink[200],
+                                          dotBgColor: AppTheme.gradientColor2,
                                           // Colors.pink.withOpacity(0.5),
                                           borderRadius: false,
                                           autoplay: true,
@@ -290,8 +292,20 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           ];
                         },
                         body: Container(
-                          color:
-                              HotelAppTheme.buildLightTheme().backgroundColor,
+                          decoration: new BoxDecoration(
+                            color: Colors.black,
+                            gradient: new LinearGradient(
+                              colors: [
+                                AppTheme.gradientColor1,
+                                AppTheme.gradientColor2,
+                                AppTheme.gradientColor3,
+                              ],
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                            ),
+                          ),
+                          // color:
+                          //     HotelAppTheme.buildLightTheme().backgroundColor,
                           child: ListView.builder(
                             // Need to display a loading tile if more items are coming
                             itemCount: _hasMore
@@ -670,7 +684,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
           ),
         ),
         Container(
-          color: HotelAppTheme.buildLightTheme().backgroundColor,
+          color: AppTheme.gradientColor2,
           child: Padding(
             padding:
                 const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
@@ -782,11 +796,11 @@ class _ItemFetcher {
 
     if (searchValue == "") {
       salonListResponse =
-          await _firestore.collection('salon').limit(n).getDocuments();
+          await _firestore.collection('salon_app_only').limit(n).getDocuments();
       print('search value no--------');
     } else {
       salonListResponse = await _firestore
-          .collection('test_salon')
+          .collection('salon_app_only')
           .where('cityUpper', isEqualTo: searchValue)
           .limit(n)
           .getDocuments();
@@ -808,7 +822,7 @@ class _ItemFetcher {
 
         //salon images
         final salonImages = await _firestore
-            .collection('salon')
+            .collection('salon_app_only')
             .document(docId)
             .collection('salonImages')
             .getDocuments();
@@ -849,9 +863,9 @@ class _ItemFetcher {
 
         //product list
         final productImages = await _firestore
-            .collection('salon')
+            .collection('salon_app_only')
             .document(docId)
-            .collection('productImages')
+            .collection('productImages ')
             .getDocuments();
 
         var productList = List<Product>();

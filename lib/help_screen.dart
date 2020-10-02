@@ -25,8 +25,9 @@ class _HelpScreenState extends State<HelpScreen> {
               color: Colors.black,
               gradient: new LinearGradient(
                 colors: [
-                  Colors.white,
-                  Colors.pink[200],
+                  AppTheme.gradientColor1,
+                  AppTheme.gradientColor2,
+                  AppTheme.gradientColor3,
                 ],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -69,7 +70,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         width: 140,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Colors.pink[300],
+                          color: AppTheme.btnColor,
                           borderRadius:
                               const BorderRadius.all(Radius.circular(4.0)),
                           boxShadow: <BoxShadow>[

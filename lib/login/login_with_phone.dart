@@ -4,7 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:best_flutter_ui_templates/help_screen.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../app_theme.dart';
 import '../navigation_home_screen.dart';
 
 class LoginPhoneScreen extends StatefulWidget {
@@ -43,7 +45,7 @@ class _LoginPhoneScreenState extends State<LoginPhoneScreen> {
               FlatButton(
                 child: Text('Ok'),
                 textColor: Colors.black,
-                color: Colors.pink[200],
+                color: AppTheme.btnColor,
                 onPressed: () async {
                   Navigator.of(context).pop();
                 },
@@ -148,7 +150,7 @@ class _LoginPhoneScreenState extends State<LoginPhoneScreen> {
                     FlatButton(
                       child: Text('Cancel'),
                       textColor: Colors.black,
-                      color: Colors.pink[300],
+                      color: AppTheme.btnColor,
                       onPressed: () async {
                         Navigator.of(context).pop();
                       },
@@ -156,7 +158,7 @@ class _LoginPhoneScreenState extends State<LoginPhoneScreen> {
                     FlatButton(
                       child: Text('Confirm'),
                       textColor: Colors.black,
-                      color: Colors.pink[300],
+                      color: AppTheme.btnColor,
                       onPressed: () async {
                         try {
                           final code = _codeController.text.trim();
@@ -266,8 +268,9 @@ class _LoginPhoneScreenState extends State<LoginPhoneScreen> {
           color: Colors.black,
           gradient: new LinearGradient(
             colors: [
-              Colors.white,
-              Colors.pink[200],
+              AppTheme.gradientColor1,
+              AppTheme.gradientColor2,
+              AppTheme.gradientColor3,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -305,12 +308,12 @@ class _LoginPhoneScreenState extends State<LoginPhoneScreen> {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                        BorderSide(color: AppTheme.btnColor, width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 2.0),
+                        BorderSide(color: AppTheme.btnColor, width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
@@ -321,7 +324,7 @@ class _LoginPhoneScreenState extends State<LoginPhoneScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
-                  color: Colors.pink[300],
+                  color: AppTheme.btnColor,
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   elevation: 5.0,
                   child: MaterialButton(

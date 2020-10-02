@@ -83,8 +83,9 @@ class _HomeDrawerState extends State<HomeDrawer> {
           color: Colors.black,
           gradient: new LinearGradient(
             colors: [
-              Colors.white,
-              Colors.pink[200],
+              AppTheme.gradientColor1,
+              AppTheme.gradientColor2,
+              AppTheme.gradientColor3,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,

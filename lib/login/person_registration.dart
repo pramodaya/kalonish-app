@@ -3,7 +3,9 @@ import 'package:best_flutter_ui_templates/hotel_booking/hotel_home_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hexcolor/hexcolor.dart';
 
+import '../app_theme.dart';
 import '../navigation_home_screen.dart';
 
 class PersonRegistration extends StatefulWidget {
@@ -63,8 +65,9 @@ class _PersonRegistrationState extends State<PersonRegistration> {
           color: Colors.black,
           gradient: new LinearGradient(
             colors: [
-              Colors.white,
-              Colors.pink[200],
+              AppTheme.gradientColor1,
+              AppTheme.gradientColor2,
+              AppTheme.gradientColor3,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -102,14 +105,14 @@ class _PersonRegistrationState extends State<PersonRegistration> {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.pinkAccent,
+                      color: AppTheme.btnColor,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.pinkAccent,
+                      color: AppTheme.btnColor,
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
@@ -134,12 +137,12 @@ class _PersonRegistrationState extends State<PersonRegistration> {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                        BorderSide(color: AppTheme.btnColor, width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 2.0),
+                        BorderSide(color: AppTheme.btnColor, width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
@@ -162,14 +165,14 @@ class _PersonRegistrationState extends State<PersonRegistration> {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.pinkAccent,
+                      color: AppTheme.btnColor,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.pinkAccent,
+                      color: AppTheme.btnColor,
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
@@ -194,14 +197,14 @@ class _PersonRegistrationState extends State<PersonRegistration> {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.pinkAccent,
+                      color: AppTheme.btnColor,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.pinkAccent,
+                      color: AppTheme.btnColor,
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
@@ -214,7 +217,7 @@ class _PersonRegistrationState extends State<PersonRegistration> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
-                  color: Colors.pinkAccent,
+                  color: AppTheme.btnColor,
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   elevation: 5.0,
                   child: MaterialButton(

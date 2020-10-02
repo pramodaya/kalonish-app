@@ -1,8 +1,5 @@
-import 'package:best_flutter_ui_templates/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
-
+import '../app_theme.dart';
 import 'model/salon_service_list.dart';
 
 class SalonServiceListView extends StatelessWidget {
@@ -43,7 +40,7 @@ class SalonServiceListView extends StatelessWidget {
                   //     const EdgeInsets.symmetric(horizontal: 0, vertical: 5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      color: Colors.pink[50],
+                      color: AppTheme.btnColor,
                       boxShadow: [
                         BoxShadow(
                             // color: Colors.black.withAlpha(100),
@@ -91,7 +88,7 @@ class SalonServiceListView extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
-                              color: Colors.pink[200],
+                              color: AppTheme.btnColor,
                               onPressed: () {
                                 print('book now clicked');
                               },

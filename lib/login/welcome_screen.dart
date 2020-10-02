@@ -1,14 +1,11 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:best_flutter_ui_templates/login/login_screen.dart';
 import 'package:best_flutter_ui_templates/login/login_with_phone.dart';
-import 'package:best_flutter_ui_templates/login/registration_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../app_theme.dart';
 import '../navigation_home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -58,8 +55,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         }
 
         //get salon data
-        final salonList =
-            await _firestore.collection('test_salon').limit(2).getDocuments();
+        // final salonList =
+        //     await _firestore.collection('test_salon').limit(2).getDocuments();
 
         // var query =
         //     _firestore.collection('user_profile').where("capital", "==");
@@ -87,16 +84,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     }
   }
 
-  void getUserProfile() async {
-    final userProfile = await _firestore
-        .collection('user_profile')
-        .where('user_id' == 'S9myWXb1JHZw1mLqCIouyYMfTmG2')
-        .getDocuments();
+  // void getUserProfile() async {
+  //   final userProfile = await _firestore
+  //       .collection('user_profile')
+  //       .where('user_id' == 'S9myWXb1JHZw1mLqCIouyYMfTmG2')
+  //       .getDocuments();
 
-    for (var userProfile in userProfile.documents) {
-      print(userProfile.data);
-    }
-  }
+  //   for (var userProfile in userProfile.documents) {
+  //     print(userProfile.data);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -109,8 +106,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             color: Colors.black,
             gradient: new LinearGradient(
               colors: [
-                Colors.white,
-                Colors.pink[200],
+                AppTheme.gradientColor1,
+                AppTheme.gradientColor2,
+                AppTheme.gradientColor3,
               ],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -169,7 +167,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
-                  color: Colors.pink[300],
+                  color: AppTheme.btnColor,
                   borderRadius: BorderRadius.circular(30.0),
                   elevation: 5.0,
                   child: MaterialButton(
@@ -180,7 +178,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     minWidth: double.infinity,
                     height: 42.0,
                     child: Text(
-                      'SignIn/Register',
+                      'SignIn/SignUp',
                     ),
                   ),
                 ),

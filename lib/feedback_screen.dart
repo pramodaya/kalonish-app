@@ -42,8 +42,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
         color: Colors.black,
         gradient: new LinearGradient(
           colors: [
-            Colors.white,
-            Colors.pink[200],
+            AppTheme.gradientColor1,
+            AppTheme.gradientColor2,
+            AppTheme.gradientColor3,
           ],
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
@@ -63,8 +64,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     color: Colors.black,
                     gradient: new LinearGradient(
                       colors: [
-                        Colors.white,
-                        Colors.pink[200],
+                        AppTheme.gradientColor1,
+                        AppTheme.gradientColor2,
+                        AppTheme.gradientColor3,
                       ],
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
@@ -107,7 +109,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                               width: 120,
                               height: 40,
                               decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: AppTheme.btnColor,
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(4.0)),
                                 boxShadow: <BoxShadow>[
@@ -118,7 +120,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 ],
                               ),
                               child: FlatButton(
-                                color: Colors.pink[300],
+                                color: AppTheme.btnColor,
                                 textColor: Colors.black,
                                 disabledColor: Colors.grey,
                                 disabledTextColor: Colors.black,

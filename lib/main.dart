@@ -1,9 +1,7 @@
 import 'dart:io';
 import 'package:best_flutter_ui_templates/app_theme.dart';
-import 'package:best_flutter_ui_templates/login/login_screen.dart';
 import 'package:best_flutter_ui_templates/login/login_with_phone.dart';
 import 'package:best_flutter_ui_templates/login/person_registration.dart';
-import 'package:best_flutter_ui_templates/login/registration_screen.dart';
 import 'package:best_flutter_ui_templates/login/welcome_screen.dart';
 import 'package:best_flutter_ui_templates/hotel_booking/item_detail.dart';
 import 'package:flutter/material.dart';
@@ -42,8 +40,6 @@ class MyApp extends StatelessWidget {
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
         NavigationHomeScreen.id: (context) => NavigationHomeScreen(),
         LoginPhoneScreen.id: (context) => LoginPhoneScreen(),
         PersonRegistration.id: (context) => PersonRegistration(),
